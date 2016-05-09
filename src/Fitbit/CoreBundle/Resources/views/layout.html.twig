@@ -23,7 +23,9 @@
 {% else %}
     <a href="{{ path('fos_user_security_login') }}">Login</a>
 {% endif %}
+
 </div>
+<div id="content">
 {% for type, messages in app.session.flashBag.all %}
     {% for message in messages %}
         <div class="{{ type }}">
@@ -34,14 +36,28 @@
 
 {% block body %}
 {% endblock %}
-
+</div>
 <div id="viewSwitch" class="bottom">
-    <span class="halfBanner"><a href="{{ path('fitbit_fitapp_homepage') }}">Dashboard</a></span><span class="halfBanner"><a href="{{ path('fitbit_fitapp_objectives') }}">Objectives</a></span>
+    <span class="halfBanner left"><a href="{{ path('fitbit_fitapp_homepage') }}">Dashboard</a></span><span class="halfBanner right"><a href="{{ path('fitbit_fitapp_objectives') }}">Objectives</a></span>
 </div>
 
 
 
 {% block javascript %}
+    <script
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    {% javascripts
+    'bundles/fitbitfitapp/js/bottomBar.js'
+    'bundles/fitbitfitapp/js/graphs.js'
+
+    output='js/compiled/app.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
 
 </body>

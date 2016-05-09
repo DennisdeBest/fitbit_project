@@ -115,6 +115,8 @@ class DataRepository extends \Doctrine\ORM\EntityRepository
         }
         return $steps;
     }
+
+
     function getArray($today, $type, $period){
         if($period=="oneYear")
             $timePeriod = "1 year";
@@ -135,45 +137,71 @@ class DataRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getResult();
 
-        $months = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
-        $returnMonths = array(
-            'January'=>0,
-            'February'=>0,
-            'March'=>0,
-            'April'=>0,
-            'May'=>0,
-            'June'=>0,
-            'July'=>0,
-            'August'=>0,
-            'September'=>0,
-            'October'=>0,
-            'November'=>0,
-            'December'=>0
-        );
+        if($period=="oneYear"){
+            $months = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+            $returnMonths = array(
+                'January'=>0,
+                'February'=>0,
+                'March'=>0,
+                'April'=>0,
+                'May'=>0,
+                'June'=>0,
+                'July'=>0,
+                'August'=>0,
+                'September'=>0,
+                'October'=>0,
+                'November'=>0,
+                'December'=>0
+            );
 
-        foreach($qb as $day) {
-            $monthNumber = (int)$day->getDate()->format('m');
-            foreach($months as $i=>$month){
-                if($monthNumber >$i && $monthNumber <= $i+1){
-                    if($type=="steps")
-                        $returnMonths[$month]+=$day->getSteps();
-                    elseif($type=="floors")
-                        $returnMonths[$month]+=$day->getFloors();
+            foreach($qb as $day) {
+                $monthNumber = (int)$day->getDate()->format('m');
+                foreach($months as $i=>$month){
+                    if($monthNumber >$i && $monthNumber <= $i+1){
+                        if($type=="steps")
+                            $returnMonths[$month]+=$day->getSteps();
+                        elseif($type=="floors")
+                            $returnMonths[$month]+=$day->getFloors();
+                        elseif($type=="bmi")
+                            $returnMonths[$month]+=$day->getBmi();
+                        elseif($type=="weight")
+                            $returnMonths[$month]+=$day->getWeight();
+                    }
                 }
             }
+            //$returnMonths = array_reverse($returnMonths);
+
+
+            for($i=0; $i<3; $i++){
+                $val = $returnMonths[$months[$i]];
+                unset($returnMonths[$months[$i]]);
+                $returnMonths[$months[$i]]=$val;
+            }
+            foreach($returnMonths as $key=>$value)
+                if($value==0)
+                    unset($returnMonths[$key]);
+
+            return $returnMonths;
         }
-        //$returnMonths = array_reverse($returnMonths);
 
+        else if($period=="threeMonths" || $period=="oneMonth" || $period=="oneWeek"){
+            $returnArray = [];
 
-        for($i=0; $i<3; $i++){
-            $val = $returnMonths[$months[$i]];
-            unset($returnMonths[$months[$i]]);
-            $returnMonths[$months[$i]]=$val;
+            foreach($qb as $day) {
+                if($type=="steps")
+                    $returnArray[]+=$day->getSteps();
+                elseif($type=="floors")
+                    $returnArray[]+=$day->getFloors();
+                elseif($type=="bmi")
+                    $returnArray[]+=$day->getBmi();
+                elseif($type=="weight")
+                    $returnArray[]+=$day->getWeight();
+            }
+
+            return $returnArray;
         }
-        foreach($returnMonths as $key=>$value)
-            if($value==0)
-                unset($returnMonths[$key]);
 
-        return $returnMonths;
+        return null;
+
     }
 }

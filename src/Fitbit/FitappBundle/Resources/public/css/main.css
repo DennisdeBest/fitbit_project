@@ -8,8 +8,18 @@ body {
 .top, .bottom {
     height: 5vh;
     position: fixed;
-    left:0px;
+    left:0;
     width: 100%;
+    max-width: 480px;
+    vertical-align: middle;
+    text-decoration: none !important;
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding-top: 0;
+}
+.top a, .bottom a{
+    text-decoration: none;
+    color: #0088CC;
 }
 
 .bottom{
@@ -38,7 +48,6 @@ body {
     font-size: 1em;
     float: left;
     height: 5vh;
-
 }
 
 #circles {
@@ -53,4 +62,34 @@ body {
     font-size: 1em;
 }
 
+.active {
+    background-color: #0088CC;
+}
+.active a {
+    color: white !important;
+}
+#content {
+    padding-top:5vh;
+}
 
+.highcharts-container text:nth-child(15) {
+    display:none;
+}
+#graphButtons {
+    display: flex;
+    flex-flow:row nowrap;
+    position: fixed;
+    margin-bottom: 5vh;
+    height: 5vh;
+    top:5vh;
+    left:0;
+    width: 100%;
+}
+
+#graphButtons button {
+    box-sizing: border-box;
+    width: 25%;
+    background: none;
+    background-color:white;
+    border: 1px solid black;
+}

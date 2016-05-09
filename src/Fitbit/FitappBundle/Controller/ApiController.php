@@ -9,8 +9,8 @@ class ApiController extends Controller
 {
     public function oneYearAction($type, $period)
     {
-        $typeArray=array('steps', 'floors');
-        $periodArray=array('oneYear', 'threeMonths', 'oneMonth');
+        $typeArray=array('steps', 'floors', 'bmi', 'weight');
+        $periodArray=array('oneYear', 'threeMonths', 'oneMonth', 'oneWeek');
         if(in_array($type, $typeArray) && in_array($period, $periodArray)) {
             $today = $this->getParameter('today');
 

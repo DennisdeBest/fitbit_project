@@ -31,7 +31,7 @@ class Data
     /**
      * @var int
      *
-     * @ORM\Column(name="weight", type="smallint", nullable=true)
+     * @ORM\Column(name="weight", type="decimal", precision=10, scale=2, nullable=true)
      */
     private $weight;
 

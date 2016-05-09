@@ -32,6 +32,13 @@ class DefaultController extends Controller
 
             $em = $this->getDoctrine()->getManager();
 
+            if($objectives->getSteps() == null)
+                $objectives->setSteps(0);
+            if($objectives->getActive() == null)
+                $objectives->setActive(0);
+            if($objectives->getFloors()==null)
+                $objectives->setFloors(0);
+
             $em->persist($objectives);
 
             $user->setObjectives($objectives);
