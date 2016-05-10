@@ -1,0 +1,29 @@
+#barGraph {
+    height:150px;
+}
+
+#barGraph .highcharts-legend g g {
+    display: flex !important;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+#barGraph .highcharts-legend {
+    display: flex !important;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+#barGraph .highcharts-legend-item {
+    flex:1;
+    width: 25%;
+}
+#barGraph .highcharts-title,#barGraph .highcharts-button, .highcharts-yaxis-title {
+    display:none;
+
+}
+.graph {
+    height: 50vh;
+}
+.graph .highcharts-legend-item {
+    display: none;
+}

@@ -1,47 +1,39 @@
 $(function() {
-/*
-    var options = {
-        chart: {
-            renderTo: 'barGraph',
-            type: 'spline'
-        },
-        title: {
-            text: 'Steps',
-            x: -20 //center
-        },
-        xAxis: {
-        },
-        series: [{
+        var options = {
+            chart: {
+                type: 'bar',
+                renderTo: 'barGraph'
+            },
+            xAxis: {
+                categories: ['Activity']
+            },
+            yAxis: {
+                min: 0
+            },
+            legend: {
+                reversed: true
+            },
+            plotOptions: {
+                series: {
+                    stacking: 'percent'
+                }
+            },
+            series: [{
+                name: 'Very Active',
+                data: [344]
+            }, {
+                name: 'Active',
+                data: [152]
+            }, {
+                name: 'Mobile',
+                data: [4]
+            }, {
+                name: 'Sedentary',
+                data: [463]
+            }]
+        };
 
-        }]
-    };
 
-    var period = 'oneYear';
+        var chart = new Highcharts.Chart(options);
 
-    $('.timePeriodButton').click(function(){
-        period = $(this).attr('id');
-        getData();
-    });
-
-    function getData(){
-        $.getJSON('http://localhost/fitbit_project/web/app_dev.php/steps/'+period, function(data) {
-            var categories= [];
-            var values = [];
-
-            $.each(data.data, function(k, v) {
-                categories.push(k);
-                values.push(v);
-            });
-            console.log(categories);
-            console.log(values);
-            options.series[0].data = values;
-
-            options.xAxis.categories = categories;
-            console.log(data);
-            var chart = new Highcharts.Chart(options);
-        });
-    }
-
-    getData();
-*/
 });

@@ -32,7 +32,8 @@ load { 0% {
     color: #93A2AC;
     font-family: Lato;
     font-weight: 100;
-    margin: 2rem;
+    margin: 2rem 1rem;
+
 }
 
 .progress>li:before {
@@ -77,4 +78,10 @@ load { 0% {
     -moz-animation: load 10s;
     -o-animation: load 10s;
     animation: load 10s;
+}
+
+#circle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
 }

@@ -1,8 +1,8 @@
 body {
-    max-width: 480px;
     width:100%;
-    padding: 0px;
+    padding: 0;
     margin:0;
+    font-family: Lato;
 
 }
 .top, .bottom {
@@ -25,6 +25,8 @@ body {
 .bottom{
     bottom: 0;
     z-index: 1000;
+    display: flex;
+    flex-flow: row nowrap;
 }
 .top{
     top:0;
@@ -35,35 +37,41 @@ body {
     box-sizing: border-box;
     text-align: center;
     display: inline-block;
+    vertical-align: middle;
     font-size: 1em;
     float: left;
     height: 5vh;
+    padding: 1vh;
 }
 .top .banner {
     width: 100%;
     border: 1px solid black;
     box-sizing: border-box;
     text-align: center;
-    display: inline-block;
     font-size: 1em;
     float: left;
     height: 5vh;
 }
 
 #circles {
-    height: 20vh;
+    height: 40vh;
     position: static;
+    top:0;
+    left:0;
     font-size: 1em;
+    border-bottom: 2px solid #218BC3;
+    box-sizing: border-box;
+    margin-top:-5vh;
 }
 
 #graphs {
-    height: 70vh;
+    height: 50vh;
     overflow: scroll;
     font-size: 1em;
 }
 
 .active {
-    background-color: #0088CC;
+    background-color: #0088CC !important;
 }
 .active a {
     color: white !important;
@@ -81,8 +89,9 @@ body {
     position: fixed;
     margin-bottom: 5vh;
     height: 5vh;
-    top:5vh;
+    bottom:0;
     left:0;
+    line-height: 5vh;
     width: 100%;
 }
 

@@ -57,5 +57,13 @@ $(function() {
     renderGraph('floors');
     renderGraph('weight');
 
+    $('#oneYear').addClass('active');
+
+    $('.timePeriodButton').click(function () {
+        console.log("graphButton clicked");
+        $('.timePeriodButton').removeClass('active');
+        $(this).addClass('active');
+    })
+
 
 });
