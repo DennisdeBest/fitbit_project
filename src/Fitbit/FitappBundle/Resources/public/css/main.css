@@ -10,7 +10,6 @@ body {
     position: fixed;
     left:0;
     width: 100%;
-    max-width: 480px;
     vertical-align: middle;
     text-decoration: none !important;
     font-weight: bolder;
@@ -101,4 +100,18 @@ body {
     background: none;
     background-color:white;
     border: 1px solid black;
+}
+
+#username {
+    float: left;
+    margin-left:10px;
+}
+#logout {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    height:5vh;
+}
+#logout button {
+    height:5vh;
 }

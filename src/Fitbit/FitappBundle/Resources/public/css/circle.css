@@ -85,3 +85,29 @@ load { 0% {
     flex-flow: row nowrap;
     justify-content: space-around;
 }
+#barLegend {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#barLegend .barLegendItem {
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+#barLegend #sedentary {
+    background-color: #f7a35c;
+}
+#barLegend #mobile {
+    background-color: #90ed7d;
+}
+#barLegend #active {
+    background-color: #434348;
+}
+#barLegend #veryActive {
+    background-color: #7cb5ec;
+}
