@@ -67,6 +67,8 @@ body {
     height: 50vh;
     overflow: scroll;
     font-size: 1em;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100%);
 }
 
 .active {
@@ -114,4 +116,32 @@ body {
 }
 #logout button {
     height:5vh;
+}
+
+
+.control-label{
+    font-size: 40px;
+    margin-left: 2%;
+}
+
+.form-control{
+    height: 35px !important;
+    width: 300px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: 2%;
+}
+
+#objectif{
+    font-size: 40px !important;
+}
+
+#objectives_Update{
+    height: 30px;
+    text-align: center;
+    width: 100px;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 50px;
 }
