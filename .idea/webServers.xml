@@ -2,10 +2,10 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="36674a65-c543-4fd9-b20a-b2ec186a1477" name="hhbdx" url="http://ftp.happybdx.fr">
-        <fileTransfer host="ftp.happybdx.fr" port="21" password="dfe0dfcddf92dfdadfcbdfdbdf9edfe0" username="happy703546">
+      <webServer id="36674a65-c543-4fd9-b20a-b2ec186a1477" name="hhbdx" url="http://ftp.hhbdx.fr">
+        <fileTransfer host="ftp.hhbdx.fr" port="21" password="dfe0dfcddf92dfdadfcbdfdbdf9edfe0" username="hhbdx703547">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>

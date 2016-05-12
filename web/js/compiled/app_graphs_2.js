@@ -29,7 +29,7 @@ $(function() {
         });
 
         function getData(){
-            $.getJSON('http://hhbdx.fr/web/app_dev.php/'+title+'/'+period, function(data) {
+            $.getJSON('http://localhost/fitbit_project/web/app_dev.php/'+title+'/'+period, function(data) {
                 var categories= [];
                 var values = [];
 

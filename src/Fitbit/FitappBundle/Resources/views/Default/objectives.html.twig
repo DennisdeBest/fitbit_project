@@ -1,9 +1,11 @@
 {% extends 'FitbitCoreBundle::layout.html.twig' %}
 {% block body %}
+    <div id="objectifContainer">
     <h3 id="objectif">Objectives : </h3>
     <div class="well">
         {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
         {{ form_end(form) }}
+    </div>
     </div>
 {% endblock %}

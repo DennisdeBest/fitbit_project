@@ -1,0 +1,113 @@
+@-webkit-keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+@-moz-keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+@keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+
+/* Container */
+
+.progress {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+}
+
+/* Item */
+
+.progress>li {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: #93A2AC;
+    font-family: Lato;
+    font-weight: 100;
+    margin: 2rem 1rem;
+
+}
+
+.progress>li:before {
+    content: attr(data-name);
+    position: absolute;
+    width: 100%;
+    bottom: -2rem;
+    font-weight: 400;
+}
+
+.progress>li:after {
+    content: attr(data-percent);
+    position: absolute;
+    width: 100%;
+    top: 1.5rem;
+    left: 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.progress svg {
+    width: 5rem;
+    height: 5rem;
+}
+
+.progress svg:nth-child(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+}
+
+.progress svg:nth-child(2) path {
+    fill: none;
+    stroke-width: 25;
+    stroke-dasharray: 629;
+    stroke: rgba(255, 255, 255, 0.9);
+    -webkit-animation: load 10s;
+    -moz-animation: load 10s;
+    -o-animation: load 10s;
+    animation: load 10s;
+}
+
+#circle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+#barLegend {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#barLegend .barLegendItem {
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+#barLegend #sedentary {
+    background-color: #f7a35c;
+}
+#barLegend #mobile {
+    background-color: #90ed7d;
+}
+#barLegend #active {
+    background-color: #434348;
+}
+#barLegend #veryActive {
+    background-color: #7cb5ec;
+}

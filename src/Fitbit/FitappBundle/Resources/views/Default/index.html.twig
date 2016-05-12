@@ -6,5 +6,11 @@
     <div id="graphs">
         {{ render(controller("FitbitFitappBundle:Graph:graph")) }}
     </div>
+    <div id="graphButtons">
+        <button class="button button-lg timePeriodButton" value="1y" id="oneYear">1 year</button>
+        <button class="button button-lg timePeriodButton" value="3m" id="threeMonths">3 months</button>
+        <button class="button button-lg timePeriodButton" value="1m" id="oneMonth">1 month</button>
+        <button class="button button-lg timePeriodButton" value="1w" id="oneWeek">1 week</button>
+    </div>
 
 {% endblock %}

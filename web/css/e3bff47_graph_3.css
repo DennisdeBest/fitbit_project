@@ -1,5 +1,5 @@
 #barGraph {
-    height:20vh;
+    height:15vh;
 }
 
 #barGraph .highcharts-legend g g {
@@ -13,8 +13,6 @@
 }
 .graph {
     height: 50vh;
-    width: 100vw;
-    display: inline;
 }
 .graph .highcharts-legend-item {
     display: none;
