@@ -4,25 +4,25 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c0a63f65e5dfa07af5ad8cd43aa6b831",
-    "content-hash": "e867166e59d742ab7e56963864eb5358",
+    "hash": "ecbc9e3d571b25cafbf3a609b9787d08",
+    "content-hash": "fcfa4f911deaff14a003087f2316cd60",
     "packages": [
         {
             "name": "coresphere/console-bundle",
-            "version": "0.4.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CoreSphere/ConsoleBundle.git",
-                "reference": "79107b90cd713e15dd2b4326910a1b18e34ec2a6"
+                "reference": "79ef9a4a86cf5839593b1b3bf385556120b14008"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CoreSphere/ConsoleBundle/zipball/79107b90cd713e15dd2b4326910a1b18e34ec2a6",
-                "reference": "79107b90cd713e15dd2b4326910a1b18e34ec2a6",
+                "url": "https://api.github.com/repos/CoreSphere/ConsoleBundle/zipball/79ef9a4a86cf5839593b1b3bf385556120b14008",
+                "reference": "79ef9a4a86cf5839593b1b3bf385556120b14008",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5",
+                "php": "^5.5|^7.0",
                 "symfony/console": "~2.7|~3.0",
                 "symfony/dependency-injection": "~2.7|~3.0",
                 "symfony/event-dispatcher": "~2.7|~3.0",
@@ -61,7 +61,7 @@
                 "javascript",
                 "symfony"
             ],
-            "time": "2015-11-27 21:56:07"
+            "time": "2016-04-01 15:26:59"
         },
         {
             "name": "doctrine/annotations",
@@ -2321,7 +2321,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20
+        "friendsofsymfony/user-bundle": 20,
+        "coresphere/console-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

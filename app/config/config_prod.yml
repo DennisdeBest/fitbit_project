@@ -16,11 +16,11 @@ imports:
 doctrine:
     dbal:
         driver:   pdo_mysql
-        host:     91.216.107.248
+        host:     "%database_host%"
         port:     "%database_port%"
-        dbname:   hhbdx703547
-        user:     hhbdx703547
-        password: Jg8paq4J
+        dbname:   symfony
+        user:     root
+        password: "%database_password%"
         charset:  UTF8
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml

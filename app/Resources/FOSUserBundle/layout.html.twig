@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Fitbit</title>
+    <link href="http://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css"/>
+    {% block stylesheets %}
+        {% stylesheets filter='cssrewrite'
+        'bundles/fitbitfitapp/css/circle.css'
+        'bundles/fitbitfitapp/css/main.css'
+        'bundles/fitbitfitapp/css/graph.css'
+        %}
+
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+
+        {% endstylesheets %}
+    {% endblock stylesheets %}
+</head>
+<body>
+<div id="userBanner" class="top">
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <span id="username">{{ app.user.username }}</span>
+        <span id="logout"> <a href="{{ path('fos_user_security_logout') }}"><button>Logout <img height="80%" src={{ asset('bundles/fitbitfitapp/img/logout.png') }}> </button></a></span>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}">Login</a>
+    {% endif %}
+
+    {% block content %}
+        {% block fos_user_content %}{% endblock %}
+    {% endblock %}
+
+</div>
+<div id="content">
+    {% for type, messages in app.session.flashBag.all %}
+        {% for message in messages %}
+            <div class="{{ type }}">
+                {{ message|trans({}, 'FOSUserBundle') }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {% block body %}
+    {% endblock %}
+</div>
+<div id="viewSwitch" class="bottom">
+    <span class="halfBanner left"><a href="{{ path('fitbit_fitapp_homepage') }}">Dashboard</a></span><span class="halfBanner right"><a href="{{ path('fitbit_fitapp_objectives') }}">Objectives</a></span>
+</div>
+
+
+
+{% block javascript %}
+    <script
+            src="https://code.jquery.com/jquery-2.2.3.min.js"
+            integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+            crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    {% javascripts
+    'bundles/fitbitfitapp/js/snapScrollPolyfill.js'
+    'bundles/fitbitfitapp/js/bottomBar.js'
+    'bundles/fitbitfitapp/js/graphs.js'
+    'bundles/fitbitfitapp/js/barGraph.js'
+
+
+    output='js/compiled/app.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+</body>
+</html>

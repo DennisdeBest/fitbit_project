@@ -176,7 +176,10 @@ var znapscroll = (function(w, d){
 znapscroll.prepare();
 $(function(){
     var path_dev = location.pathname.split("/")[4];
-    var path = location.pathname.split("/")[1];
+    var path = location.pathname.split("/")[2];
+
+    console.log("path "+path);
+    console.log("pathdev "+path_dev);
     if(path == 'objectives' || path_dev == 'objectives')
         $('.right').addClass('active');
     else
@@ -213,22 +216,17 @@ $(function() {
         });
 
         function getData(){
-            $.getJSON('http://hhbdx.fr/web/app_dev.php/'+title+'/'+period, function(data) {
+            $.getJSON(title+'/'+period, function(data) {
                 var categories= [];
                 var values = [];
-
-                console.log(data);
 
                 $.each(data.data, function(k, v) {
                     categories.push(k);
                     values.push(v);
                 });
-                console.log(categories);
-                console.log(values);
                 options.series[0].data = values;
 
                 options.xAxis.categories = categories;
-                console.log(data);
                 var chart = new Highcharts.Chart(options);
             });
         }
@@ -279,7 +277,7 @@ $(function() {
                 data: [152]
             }, {
                 name: 'Mobile',
-                data: [4]
+                data: [123]
             }, {
                 name: 'Sedentary',
                 data: [463]

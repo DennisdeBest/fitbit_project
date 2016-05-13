@@ -1,8 +1,3 @@
 fitbit_core_homepage:
     path:     /
     defaults: { _controller: FitbitCoreBundle:Default:index }
-
-fitbit_core_register:
-    path:     /
-    defaults: { _controller: FitbitCoreBundle:Default:register }
-

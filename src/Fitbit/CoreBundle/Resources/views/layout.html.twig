@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <title>Fitbit</title>
@@ -12,6 +13,7 @@
     'bundles/fitbitfitapp/css/circle.css'
     'bundles/fitbitfitapp/css/main.css'
     'bundles/fitbitfitapp/css/graph.css'
+    'bundles/fitbitfitapp/css/form.css'
     %}
 
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
@@ -23,15 +25,15 @@
 <div id="userBanner" class="top">
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
     <span id="username">{{ app.user.username }}</span>
-    <span id="logout"> <a href="{{ path('fos_user_security_logout') }}"><button>Logout <img height="80%" src={{ asset('bundles/fitbitfitapp/img/logout.png') }}> </button></a></span>
+    <span id="logout"> <a href="{{ path('fos_user_security_logout') }}"><button class="logoutButton">Logout </button></a></span>
 {% else %}
     <a href="{{ path('fos_user_security_login') }}">Login</a>
 {% endif %}
-
+    <div class="fosContent">
     {% block content %}
         {% block fos_user_content %}{% endblock %}
     {% endblock %}
-
+    </div>
 </div>
 <div id="content">
 {% for type, messages in app.session.flashBag.all %}
@@ -45,9 +47,11 @@
 {% block body %}
 {% endblock %}
 </div>
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 <div id="viewSwitch" class="bottom">
     <span class="halfBanner left"><a href="{{ path('fitbit_fitapp_homepage') }}">Dashboard</a></span><span class="halfBanner right"><a href="{{ path('fitbit_fitapp_objectives') }}">Objectives</a></span>
 </div>
+{% endif %}
 
 
 

@@ -26,7 +26,7 @@ $(function() {
                 data: [152]
             }, {
                 name: 'Mobile',
-                data: [4]
+                data: [123]
             }, {
                 name: 'Sedentary',
                 data: [463]

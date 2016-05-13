@@ -2,7 +2,7 @@ body {
     width:100%;
     padding: 0;
     margin:0;
-    font-family: Lato;
+    font-family: 'Fjalla One', sans-serif !important;
 
 }
 .top, .bottom {
@@ -29,10 +29,13 @@ body {
 }
 .top{
     top:0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background-color: white;
 }
 .bottom .halfBanner {
     width: 50%;
-    border: 1px solid black;
+    border: 1px outset darkgray;
     box-sizing: border-box;
     text-align: center;
     display: inline-block;
@@ -74,7 +77,8 @@ body {
 #graph {
 }
 .active {
-    background-color: #0088CC !important;
+    background-color: #7cb5ec !important;
+    border: 1px inset darkgray !important;
 }
 .active a {
     color: white !important;
@@ -97,13 +101,22 @@ body {
     line-height: 5vh;
     width: 100%;
 }
+.logoutButton{
+    box-sizing: border-box;
+    width: 100px;
+    background: none;
+    background-color:white;
+    border-left: 1px solid black;
+    height: 4vh;
+    margin-top: 0.5vh;
+}
 
 #graphButtons button {
     box-sizing: border-box;
     width: 25%;
     background: none;
     background-color:white;
-    border: 1px solid black;
+    border: 1px outset darkgray;
 }
 
 #username {
@@ -116,10 +129,6 @@ body {
     right: 5px;
     height:5vh;
 }
-#logout button {
-    height:5vh;
-}
-
 
 .control-label{
     font-size: 40px;

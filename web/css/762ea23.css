@@ -1,0 +1,372 @@
+@-webkit-keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+@-moz-keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+@keyframes
+load { 0% {
+    stroke-dashoffset:0
+}
+}
+
+/* Container */
+
+.progress {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+}
+
+/* Item */
+
+.progress>li {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: #93A2AC;
+    font-family: Lato;
+    font-weight: 100;
+    margin: 2rem 1rem;
+
+}
+
+.progress>li:before {
+    content: attr(data-name);
+    position: absolute;
+    width: 100%;
+    bottom: -2rem;
+    font-weight: 400;
+}
+
+.progress>li:after {
+    content: attr(data-percent);
+    position: absolute;
+    width: 100%;
+    top: 1.5rem;
+    left: 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.progress svg {
+    width: 5rem;
+    height: 5rem;
+}
+
+.progress svg:nth-child(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+}
+
+.progress svg:nth-child(2) path {
+    fill: none;
+    stroke-width: 25;
+    stroke-dasharray: 629;
+    stroke: rgba(255, 255, 255, 0.9);
+    -webkit-animation: load 10s;
+    -moz-animation: load 10s;
+    -o-animation: load 10s;
+    animation: load 10s;
+}
+
+#circle {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+#barLegend {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+#barLegend .barLegendItem {
+    width: 25%;
+    box-sizing: border-box;
+    font-size: 0.7em;
+    font-weight: 600;
+    text-align: center;
+    color: white;
+}
+
+#barLegend #sedentary {
+    background-color: #f7a35c;
+}
+#barLegend #mobile {
+    background-color: #90ed7d;
+}
+#barLegend #active {
+    background-color: #434348;
+}
+#barLegend #veryActive {
+    background-color: #7cb5ec;
+}
+body {
+    width:100%;
+    padding: 0;
+    margin:0;
+    font-family: 'Fjalla One', sans-serif !important;
+
+}
+.top, .bottom {
+    height: 5vh;
+    position: fixed;
+    left:0;
+    width: 100%;
+    vertical-align: middle;
+    text-decoration: none !important;
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding-top: 0;
+}
+.top a, .bottom a{
+    text-decoration: none;
+    color: #0088CC;
+}
+
+.bottom{
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    flex-flow: row nowrap;
+}
+.top{
+    top:0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background-color: white;
+}
+.bottom .halfBanner {
+    width: 50%;
+    border: 1px outset darkgray;
+    box-sizing: border-box;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1em;
+    float: left;
+    height: 5vh;
+    padding: 1vh;
+}
+.top .banner {
+    width: 100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1em;
+    float: left;
+    height: 5vh;
+}
+
+#circles {
+    height: 45vh;
+    position: static;
+    top:0;
+    left:0;
+    font-size: 1em;
+    border-bottom: 2px solid #218BC3;
+    box-sizing: border-box;
+    margin-top:-5vh;
+}
+
+#graphs {
+    height: 50vh;
+    overflow: scroll;
+    font-size: 1em;
+    scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(50vh);
+}
+
+#graph {
+}
+.active {
+    background-color: #7cb5ec !important;
+    border: 1px inset darkgray !important;
+}
+.active a {
+    color: white !important;
+}
+#content {
+    padding-top:5vh;
+}
+
+.highcharts-container text:nth-child(15) {
+    display:none;
+}
+#graphButtons {
+    display: flex;
+    flex-flow:row nowrap;
+    position: fixed;
+    margin-bottom: 5vh;
+    height: 5vh;
+    bottom:0;
+    left:0;
+    line-height: 5vh;
+    width: 100%;
+}
+.logoutButton{
+    box-sizing: border-box;
+    width: 100px;
+    background: none;
+    background-color:white;
+    border-left: 1px solid black;
+    height: 4vh;
+    margin-top: 0.5vh;
+}
+
+#graphButtons button {
+    box-sizing: border-box;
+    width: 25%;
+    background: none;
+    background-color:white;
+    border: 1px outset darkgray;
+}
+
+#username {
+    float: left;
+    margin-left:10px;
+}
+#logout {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    height:5vh;
+}
+
+.control-label{
+    font-size: 40px;
+    margin-left: 2%;
+}
+
+.form-control{
+    height: 35px !important;
+    width: 300px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: 2%;
+}
+
+#objectif{
+    font-size: 40px !important;
+
+}
+#objectifContainer{
+    height: 90vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+#objectives_Update{
+    height: 30px;
+    text-align: center;
+    width: 100px;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 50px;
+}
+
+#barGraph {
+    height:20vh;
+}
+
+#barGraph .highcharts-legend g g {
+    display: flex !important;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+#barGraph .highcharts-title,#barGraph .highcharts-button, .highcharts-yaxis-title, #barGraph .highcharts-legend {
+    display:none;
+
+}
+.graph {
+    height: 50vh;
+    width: 100vw;
+    display: inline;
+}
+.graph .highcharts-legend-item {
+    display: none;
+}
+#formulaire .labelForm{
+    margin-left:15%;
+    margin-top: 1%;
+    font-size: 35px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #7cb5ec;
+}
+
+#formulaire .inputForm{
+    margin-left:5%;
+    margin-top: 1%;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.remember{
+    margin-left: 15%;
+    margin-top: 1%;
+}
+
+#remember_me{
+    margin-left: 2%;
+    margin-top: 1%;
+    height: 20px;
+    width: 20px;
+}
+
+.login{
+    margin-left: 15%;
+    margin-top: 1%;
+    border-radius: 50px;
+    height: 30px;
+    width: 200px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#register{
+    margin-left: 15%;
+    margin-top: 1%;
+    font-size: 25px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #7cb5ec;
+}
+
+.control-label{
+    margin-left:15%;
+    margin-top: 1%;
+    font-size: 35px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #7cb5ec;
+    display:flex;
+    flex-flow: column nowrap;
+}
+
+.registre{
+    margin-left: 20%;
+    margin-top: 3%;
+    border-radius: 50px;
+    height: 30px;
+    width: 200px;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.form-control{
+    margin-left: 20%;
+    margin-top: 1%;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    border-radius: 50px;
+}
